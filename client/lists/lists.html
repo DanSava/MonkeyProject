@@ -1,0 +1,15 @@
+<template name="lists">
+<div class="page-header">
+		<h1><small>Lists <input class="name input-sm float-right" placeholder="New List" type="text"> </small></h1>
+</div>
+ <ul class="nav nav-pills nav-stacked">
+ 	<li></li>
+ 	{{#each lists}}
+ 		{{>listitem}}
+ 	{{/each}}
+ </ul>
+</template>
+
+<template name="listitem">
+	<li class="list"><span class="label label-success">{{title}}</span><span class="removeListItem glyphicon glyphicon-plane pull-right"></span></li>
+</template>

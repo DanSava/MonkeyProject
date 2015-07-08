@@ -10,3 +10,6 @@ Router.route('/about', function(){
 Router.route('/builder', function(){
   this.render('builder');
 });
+Router.route('/todo', function(){
+  this.render('todo');
+});
