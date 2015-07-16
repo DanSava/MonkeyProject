@@ -1,4 +1,5 @@
 Meteor.methods({
+	// List methods
 	addList: function(txt){
 		Lists.insert({
 			title: txt,
@@ -9,8 +10,9 @@ Meteor.methods({
 		Lists.remove(id);
 	},
 	updateList: function(id, txt) {
-		Lists.update(id,{$set:{title: txt}});
+		Lists.update(id, {$set:{title: txt}});
 	},
+	// Todo methods
   addTodo: function(id, txt){
     Todos.insert({
       todotext: txt,
@@ -23,5 +25,21 @@ Meteor.methods({
   },
   updateTodo: function(id, txt) {
     Todos.update(id, {$set:{todotext: txt}});
-  }
+  },
+	updateTodoDone: function(id, done){
+			Todos.update(id, {$set:{done:done}});
+	},
+	// Calendar methods
+	'saveCalEvent': function (ce){
+		CalEvent.insert(ce);
+	},
+	'updateCalEvent':function(id, txt){
+		CalEvent.update({_id:id}, {$set:{title:txt}});
+	},
+	'moveEvent' : function (reqEvent){
+		return CalEvent.update({_id:reqEvent._id}, {$set:{start:reqEvent.start, end:reqEvent.end}})
+	},
+	'removeEvent' : function(id) {
+			CalEvent.remove(id);
+	}
 });

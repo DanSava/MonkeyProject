@@ -11,3 +11,6 @@ accounts-password
 accounts-ui
 nemo64:bootstrap
 less
+momentjs:moment
+mrt:fullcalendar
+rajit:bootstrap3-datepicker

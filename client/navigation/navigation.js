@@ -23,10 +23,21 @@ Template.navigation.helpers({
     }
     return '';
   },
+	isMyCalendarActive : function () {
+		if (Session.equals("page", 4)){
+			return 'active';
+		}
+		return '';
+	},
 	projectName: function(){
 		return 'Micro-Top'
 	},
 	'isUserConnected': function () {
 		return Meteor.userId();
+	}
+});
+Template.navigation.events({
+	'click .logOutBtn': function () {
+		Meteor.logout()
 	}
 });

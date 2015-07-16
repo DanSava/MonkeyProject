@@ -5,11 +5,22 @@ Router.route('/', function(){
   this.render('home');
 });
 Router.route('/about', function(){
-  this.render('about');
+  if (Meteor.userId()) {
+    this.render('about');
+  }
 });
 Router.route('/builder', function(){
-  this.render('builder');
+  if (Meteor.userId()) {
+    this.render('builder');
+  }
 });
 Router.route('/todo', function(){
-  this.render('todo');
+  if (Meteor.userId()) {
+    this.render('todo');
+  }
+});
+Router.route('/myCalendar', function(){
+  if (Meteor.userId()) {
+    this.render('calendar');
+  }
 });

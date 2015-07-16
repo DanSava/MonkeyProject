@@ -19,11 +19,14 @@ Template.todolistitem.helpers ({
 	'done_class' : function() {
 		return this.done? 'done':'';
 	},
-	'done_checkbox' : function () {
-		return this.done? 'checked="checked"':'';
+	'donecheckbox' : function () {
+		return this.done ? 'checked':'';
 	},
 	'editingtodo' : function () {
 			return Session.get('editingtodo') === this._id;
+	},
+	'date': function () {
+		 	return moment(this.createdAt).fromNow();
 	}
 });
 Template.todolistitem.events({
@@ -37,12 +40,12 @@ Template.todolistitem.events({
 		if(evt.which === 13){
 			var txt = tmp.find('.newtodotxt').value;
 			if (txt) {
-				Todos.update(this._id,{$set:{todotext:txt}});
+				Meteor.call('updateTodo', this._id, txt)
 			};
 			Session.set('editingtodo', null);
 		}
 	},
 	'click .check':function(evt,tmp){
-		Todos.update(this._id,{$set:{done:!this.done}});
+		Meteor.call('updateTodoDone', this._id, !this.done)
 	}
 });

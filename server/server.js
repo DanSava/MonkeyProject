@@ -9,4 +9,7 @@ if (Meteor.isServer) {
   Meteor.publish("todos", function () {
     return Todos.find();
   });
+  Meteor.publish("calevent", function () {
+    return CalEvent.find();
+  });
 }

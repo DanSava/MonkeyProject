@@ -2,6 +2,7 @@
 	margin-left: 5px;
 	margin-top: 10px;
 }
-.done{
+.done.todoitem {
 	text-decoration: line-through;
+	color: green;
 }

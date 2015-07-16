@@ -16,11 +16,14 @@
 			    	<li class="{{isAboutActive}}" ><a href="/about">About</a></li>
 			    	<li class="{{isBuilderActive}}" ><a href="/builder">Builder</a></li>
 			    	<li class="{{isTodoActive}}" ><a href="/todo">Todo</a></li>
+						<li class="{{isMyCalendarActive}}" ><a href="/myCalendar">Calendar</a></li>
 					{{/if}}
 	      </ul>
+					{{#if isUserConnected}}
 	      <ul class="nav navbar-nav navbar-right">
-	        <li class="test2"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	        <li class="logOutBtn"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
 	      </ul>
+				{{/if}}
 	    </div>
 	  </div>
 	</nav>

@@ -7,6 +7,7 @@
 			<tr>
 				<th>Done</th>
 				<th>Task</th>
+				<th>Added</th>
 				<th>Remove</th>
 			</tr>
 		</thead>
@@ -19,19 +20,22 @@
 </template>
 
 <template name="todolistitem">
-	<tr class="{{done_class}}">
+	<tr>
 		<td>
-			<label class="checkbox"><input class="check" {{done_checkbox}} type="checkbox"></label>
+			<input class="check" {{donecheckbox}} type="checkbox">
 		</td>
 		{{#if editingtodo}}
-			<td><input class="newtodotxt" type="text" name="todotext" placeholder="{{todotext}}"/></td>
+		<td><input class="newtodotxt" type="text" name="todotext" value="{{todotext}}"/></td>
 		{{else}}
-		<td class="todoitem">
+		<td class=" {{done_class}} todoitem">
 			 {{todotext}}
 		</td>
 		{{/if}}
 		<td>
-		<span class="removeTodoItem glyphicon glyphicon-trash"></span>
+			{{date}}
+		</td>
+		<td>
+			<span class="removeTodoItem glyphicon glyphicon-trash"></span>
 		</td>
 	</tr>
 </template>

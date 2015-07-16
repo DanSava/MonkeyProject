@@ -11,5 +11,9 @@
 </template>
 
 <template name="listitem">
-	<li class="list"><span class="label label-success">{{title}}</span><span class="removeListItem glyphicon glyphicon-plane pull-right"></span></li>
+	{{#if editinglist}}
+		<input class="newListTxt" type="text" name="listText" value="{{title}}"/>
+	{{else}}
+		<li class="list"><a href="#"> <span class="label label-success">{{title}}</span> <span class="removeListItem glyphicon glyphicon-trash pull-right"></span></a></li>
+	{{/if}}
 </template>
