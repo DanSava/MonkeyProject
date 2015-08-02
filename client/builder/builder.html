@@ -1,15 +1,16 @@
 <template name="builder">
 	<div class="page-header">
 		<h1 class="clickTest">Builder  <small>Page info</small></h1>
+	</div>
+	<div class="container">
 		<label class="col-xs-3 control-label">Size</label>
 		<div class="col-xs-5 selectContainer">
 				<select class="form-control" name="size">
-						<option value="">Choose a size</option>
-						<option value="s">Small (S)</option>
-						<option value="m">Medium (M)</option>
-						<option value="l">Large (L)</option>
-						<option value="xl">Extra large (XL)</option>
+					{{# each clients}}
+						<option class="client_item" value="{{this._id}}">{{name}}</option>
+					{{/each}}
 				</select>
 		</div>
+
 	</div>
 </template>

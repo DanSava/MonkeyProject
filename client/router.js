@@ -24,3 +24,9 @@ Router.route('/myCalendar', function(){
     this.render('calendar');
   }
 });
+
+Router.route('/clients', function(){
+  if (Meteor.userId()) {
+    this.render('clients');
+  }
+});

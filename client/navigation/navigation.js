@@ -29,6 +29,12 @@ Template.navigation.helpers({
 		}
 		return '';
 	},
+	is_clients_active : function () {
+		if (Session.equals("page", 5)){
+			return 'active';
+		}
+		return '';
+	},
 	projectName: function(){
 		return 'Micro-Top'
 	},

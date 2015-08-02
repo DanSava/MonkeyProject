@@ -1,0 +1,40 @@
+<template name="new_client_dlg">
+  <!-- Modal -->
+<div id="new_client" class="new_client modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close close_dlg" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add a new client</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+              <div class="col-xs-6">
+                <label for="title">Name</label>
+                <input type="text" class=" form-control" id="client_name" placeholder="" value="">
+              </div>
+            </div>
+            <label for="title">Address</label>
+            <input type="text" class="form-control" id="client_adr" placeholder="" value="">
+            <div class="row">
+              <div class="col-xs-6">
+                <label for="title">Contact Person</label>
+                <input type="text" class="form-control" id="client_contact_person" placeholder="" value="">
+              </div>
+              <div class="col-xs-6">
+                <label for="title">Email</label>
+                <input type="text" class="form-control" id="client_email" placeholder="" value="">
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close_dlg btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="save_info_dlg btn btn-primary" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+</template>

@@ -12,4 +12,10 @@ if (Meteor.isServer) {
   Meteor.publish("calevent", function () {
     return CalEvent.find();
   });
+  Meteor.publish("clients", function () {
+    return Clients.find();
+  });
+  Meteor.publish("equipment", function () {
+    return Equipment.find();
+  });
 }

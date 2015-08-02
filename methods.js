@@ -12,6 +12,7 @@ Meteor.methods({
 	updateList: function(id, txt) {
 		Lists.update(id, {$set:{title: txt}});
 	},
+
 	// Todo methods
   addTodo: function(id, txt){
     Todos.insert({
@@ -29,6 +30,7 @@ Meteor.methods({
 	updateTodoDone: function(id, done){
 			Todos.update(id, {$set:{done:done}});
 	},
+
 	// Calendar methods
 	'saveCalEvent': function (ce){
 		CalEvent.insert(ce);
@@ -41,5 +43,13 @@ Meteor.methods({
 	},
 	'removeEvent' : function(id) {
 			CalEvent.remove(id);
+	},
+
+	// Client methods
+	insert_client : function(cl) {
+		Clients.insert(cl);
 	}
+
+
+
 });
