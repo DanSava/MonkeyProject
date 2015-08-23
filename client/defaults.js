@@ -8,3 +8,4 @@ Session.setDefault('page', 0);
 Session.setDefault('listid', null);
 Session.setDefault('editingtodo', null);
 Session.setDefault('editingList', null);
+Session.setDefault('editing_client_id', null)
