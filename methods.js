@@ -39,17 +39,23 @@ Meteor.methods({
 		CalEvent.update({_id:id}, {$set:{title:txt}});
 	},
 	'moveEvent' : function (reqEvent){
-		return CalEvent.update({_id:reqEvent._id}, {$set:{start:reqEvent.start, end:reqEvent.end}})
+		return CalEvent.update({_id:reqEvent._id}, {$set:{start:reqEvent.start, end:reqEvent.end}});
 	},
 	'removeEvent' : function(id) {
 			CalEvent.remove(id);
 	},
 
 	// Client methods
-	insert_client : function(cl) {
-		Clients.insert(cl);
+	insert_client : function(client) {
+		Clients.insert(client);
+	},
+	update_client : function(client) {
+		Clients.update({_id:client._id}, {$set:{name:client.name,
+									address:client.address, contact_person:client.contact_person,
+									email:client.email}});
+	},
+	remove_client : function(id) {
+		Clients.remove(id);
 	}
-
-
 
 });

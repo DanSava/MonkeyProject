@@ -17,7 +17,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close closeDialog" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Event</h4>
+        <h4 class="modal-title">Edit Intervention</h4>
       </div>
       <div class="modal-body">
         <div class="form-group">
@@ -33,12 +33,12 @@
             <input type="text" class="form-control" id="equipment" placeholder="" value="{{event.owner}}">
             <label for="title">Dates</label>
             <div class="datepicker input-daterange input-group" id="datepicker">
-              <input type="text" class="input-sm form-control" name="start" placeholder="{{event.start}}"/>
+              <input type="text" class="input-sm form-control" name="start" id="start_date" placeholder="{{event.start}}"/>
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
                 to
               </span>
-              <input type="text" class="input-sm form-control" name="end" placeholder="End Date"/>
+              <input type="text" class="input-sm form-control" name="end" id="end_date" placeholder="{{event.end}}"/>
               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
             </div>
         </div>
