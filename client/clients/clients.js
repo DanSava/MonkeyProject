@@ -23,7 +23,7 @@ Template.client_item.events({
     $("#new_client").modal('show');
   },
 
-  'click .remove_client' : function (evt, tmp) {    
+  'click .remove_client' : function (evt, tmp) {
     Meteor.call('remove_client', this._id);
   }
 
