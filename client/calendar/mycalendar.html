@@ -1,10 +1,20 @@
 <template name="calendar">
   <div class="container ">
-    <h1>Event Calendar!</h1>
-      <div class="col-md-9">
+    <h1>Intetrvention Calendar</h1>
+      <div class="col-md-5">
         <div class="mycal" >
         </div>
       </div>
+      <div class="col-md-5 pull-right">
+          <h1> <small> Users</small></h1>
+          <ul class="nav nav-pills nav-stacked">
+           {{#each users}}
+             <li> ID :  {{_id}} </li>
+           {{/each}}
+          </ul>
+      </div>
+
   </div>
+
     {{>new_event_dlg}}
 </template>

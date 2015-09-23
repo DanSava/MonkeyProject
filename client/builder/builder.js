@@ -2,11 +2,11 @@ Template.builder.onRendered(function(){
 Session.set('page',2);
 });
 
-Template.builder.events({
-  'onChange .form-control': function () {
-      alert('s');
+Template.builder.events({ //does not work
+  'change .form-control': function () {
+      alert(this._id);
   },
-  'click .client_item' : function (evt, tmp) {
+  'click .client_item' : function (evt, tmp) {//does not work
     alert(this._id);
   }
 });

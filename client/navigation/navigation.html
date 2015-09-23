@@ -12,14 +12,16 @@
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
 	        <li class="{{isHomeActive}}" ><a href="/">Home</a></li>
-					{{#if isUserConnected}}
-			    	<li class="{{isAboutActive}}" ><a href="/about">About</a></li>
-			    	<li class="{{isBuilderActive}}" ><a href="/builder">Builder</a></li>
-			    	<li class="{{isTodoActive}}" ><a href="/todo">Todo</a></li>
-						<li class="{{isMyCalendarActive}}" ><a href="/myCalendar">Calendar</a></li>
+					{{#if isInRole 'super'}}
+							<li class="{{isAboutActive}}" ><a href="/about">About</a></li>
+							<li class="{{isBuilderActive}}" ><a href="/builder">Builder</a></li>
+							<li class="{{isTodoActive}}" ><a href="/todo">Todo</a></li>
 							<li class="{{is_clients_active}}" ><a href="/clients">Clients</a></li>
+				  {{/if}}
+					{{#if isUserConnected}}
+						<li class="{{isMyCalendarActive}}" ><a href="/myCalendar">Calendar</a></li>
 					{{/if}}
-	      </ul>
+      	</ul>
 					{{#if isUserConnected}}
 	      <ul class="nav navbar-nav navbar-right">
 	        <li class="logOutBtn"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
