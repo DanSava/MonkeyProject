@@ -46,16 +46,48 @@ Meteor.methods({
 	},
 
 	// Client methods
-	insert_client : function(client) {
-		Clients.insert(client);
+	insert_client : function(cl) {
+		Clients.insert(cl);
 	},
-	update_client : function(client) {
-		Clients.update({_id:client._id}, {$set:{name:client.name,
-									address:client.address, contact_person:client.contact_person,
-									email:client.email}});
+	remove_client : function(client_id) {
+		Clients.remove(client_id);
 	},
-	remove_client : function(id) {
-		Clients.remove(id);
+
+	// Equipement methods
+	'insert_equipment' : function (equipment) {
+		Equipment.insert(equipment);
+	},
+	'update_equipment' : function (equipment) {
+		Equipment.update({_id: equipment._id}, {$set: {type: equipment.type,
+			manufacturer: equipment.manufacturer, name: equipment.name,
+			serial_no: equipment.serial_no, size:equipment.size, install_date: equipment.install_date,
+			last_check_date: equipment.last_check_date}
+			});
+	},
+	'remove_equipment' : function (equipment_id) {
+		Equipment.remove(equipment_id);
+	},
+
+	// Manufacturer Methods
+	'insert_manufacturer' : function (el) {
+		Manufacturer.insert(el);
+	},
+	'remove_manufacturer': function(id) {
+		Manufacturer.remove(id);
+	},
+	'update_manufacturer': function(el) {
+		Manufacturer.updated({_id: el._id}, {$set:{name: el.name}});
+	},
+
+	// Equipment Type Methods
+	'insert_equipment_type' : function (el) {
+		EquipmentType.insert(el);
+	},
+	'remove_equipment_type': function(id) {
+		EquipmentType.remove(id);
+	},
+	'update_equipment_type': function(el) {
+		EquipmentType.updated({_id: el._id}, {$set:{name: el.name}});
 	}
 
 });

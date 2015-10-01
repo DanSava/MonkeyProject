@@ -35,8 +35,14 @@ Template.navigation.helpers({
 		}
 		return '';
 	},
+	is_equipment_active : function () {
+		if (Session.equals("page", 6)){
+			return 'active';
+		}
+		return '';
+	},
 	projectName: function(){
-		return 'Micro-Top'
+		return 'Micro-Top';
 	},
 	'isUserConnected': function () {
 		return Meteor.userId();
@@ -44,6 +50,7 @@ Template.navigation.helpers({
 });
 Template.navigation.events({
 	'click .logOutBtn': function () {
-		Meteor.logout()
+		Session.set('page', 0);
+		Meteor.logout();
 	}
 });

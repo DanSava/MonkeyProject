@@ -5,11 +5,15 @@
 	<div class="container">
 		<label class="col-xs-3 control-label">Size</label>
 		<div class="col-xs-5 selectContainer">
-				<select class="form-control" name="size">
+				<select class="form-control" name="size" id='test'>
 					{{# each clients}}
 						<option class="client_item" value="{{this._id}}">{{name}}</option>
 					{{/each}}
 				</select>
+		</div>
+		<div class="col-xs-5 selectContainer">
+				{{>manufacturer}}
+				{{>equipment_type}}
 		</div>
 
 	</div>

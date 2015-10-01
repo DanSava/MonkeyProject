@@ -1,0 +1,21 @@
+<template name="equipment_type">
+  <div class="dropdown">
+    <button class="equipment_type_dropdown btn btn-default dropdown-toggle "
+      type="button" data-toggle="dropdown">{{selected_equipment_type}} <span class="caret">
+    </span></button>
+    <ul class="dropdown-menu">
+       <li class="dropdown-header">Equipment Types</li>
+       {{#each equipment_type_list}}
+          <li class="equipment_type_el" ><a href="#"> {{name}}
+            <span class="remove_equipment_type glyphicon glyphicon-remove pull-right" style="color: red"></span>
+         </a></li>
+        {{/each}}
+        <li class="divider"></li>
+        {{#if show_new_equipment_type_input}}
+          <li ><input type="text" class="new_equipment_type form-control input-sm" id="new_equipment_type" size="5" placeholder='New Equipement Type'> </li>
+        {{else}}
+          <li class="new_equipment_type_lbl"><a href="#" >New Type <span class="glyphicon glyphicon-plus pull-right" style="color: blue"> </span></a></li>
+        {{/if}}
+    </ul>
+  </div>
+</template>

@@ -7,11 +7,9 @@ if (Meteor.isServer) {
         password: 'test',
         username: 'Super Duper User',
         profile: {name:'Super User'}
-      }); 
-
+      });
         Meteor.users.update({_id:user_id}, {$set:{'emails.0.verified': true}});
         Roles.addUsersToRoles(user_id, 'super');
-
     }
     // code to run on server at startup
   });
@@ -25,13 +23,19 @@ if (Meteor.isServer) {
   Meteor.publish("calevent", function () {
     return CalEvent.find();
   });
+  Meteor.publish("manufacturer", function () {
+    return Manufacturer.find();
+  });
   Meteor.publish("clients", function () {
     return Clients.find();
+  });
+  Meteor.publish("users", function() {
+    return Meteor.users.find();
   });
   Meteor.publish("equipment", function () {
     return Equipment.find();
   });
-  Meteor.publish("users", function() {
-    return Meteor.users.find();
+  Meteor.publish("equipment_type", function () {
+    return EquipmentType.find();
   });
 }

@@ -1,0 +1,47 @@
+<template name="equipment_dlg">
+  <!-- Modal -->
+<div id="equipment_dlg" class="equipment_dlg modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close close_dlg" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Equipment </h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+              <div class="col-xs-8">
+                <label for="title">Type</label>
+                {{>equipment_type}}
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-8">
+              <label for="title">Manufacturer</label>
+              {{>manufacturer}}
+              <!-- <input type="text" class="form-control" id="equipment_manufacturer" placeholder="" value="{{editing_equipment.manufacturer}}" required> !-->
+              <label for="title">Name</label>
+              <input type="text" class="form-control" id="equipment_name" placeholder="" value="{{editing_equipment.name}}" required>
+              <label for="title">Size</label>
+              <input type="text" class="form-control" id="equipment_size" placeholder="" value="{{editing_equipment.size}}" required>
+              <label for="title">Serial Number</label>
+              <input type="text" class="form-control" id="equipment_serial_no" placeholder="" value="{{editing_equipment.serial_no}}" required>
+              <label for="title">Installation Data</label>
+              <input type="date" class="form-control" id="equipment_install_date" placeholder="" value="{{editing_equipment.install_date}}" required>
+              {{#if editing_equipment}}
+              <label for="title">Last Check-up Date</label>
+              <input type="date" class="form-control" id="equipment_last_check_date" placeholder="" value="{{editing_equipment.last_check_date}}" required>
+              {{/if}}
+              </div>
+            </div>
+      <div class="modal-footer">
+        <button type="button" class="close_dlg btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="save_info_dlg btn btn-primary" data-dismiss="modal">Save</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</template>

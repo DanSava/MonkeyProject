@@ -11,6 +11,7 @@ Template.calendar.onRendered(function () {
       calendarEvent.title = 'New Event';
       calendarEvent.owner = Meteor.userId();
       calendarEvent.backgroundColor = 'green';
+      calendarEvent.equipment = '';
       $("#newEvent").modal();
       //Meteor.call('saveCalEvent', calendarEvent);
     },

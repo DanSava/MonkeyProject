@@ -1,0 +1,21 @@
+<template name="manufacturer">
+  <div class="dropdown">
+    <button class="manufacturer_dropdown btn btn-default dropdown-toggle "
+      type="button" data-toggle="dropdown">{{selected_manufacturer}} <span class="caret">
+    </span></button>
+    <ul class="dropdown-menu">
+       <li class="dropdown-header">Manufacturers</li>
+       {{#each manufacturer_list}}
+        <li class="manufacturer_el" ><a href="#"> {{name}}
+          <span class="remove_manufacturer glyphicon glyphicon-remove pull-right" style="color: red"></span>
+       </a></li>
+        {{/each}}
+        <li class="divider"></li>
+        {{#if show_new_manufacturer_input}}
+        <li ><input type="text" class="new_manufacturer form-control input-sm" id="new_manufacturer" size="5" placeholder='New  Manufacturer'> </li>
+        {{else}}
+        <li class="new_manufacturer_lbl"><a href="#" >New Manufacturer <span class="remove_manufacturer glyphicon glyphicon-plus pull-right" style="color: blue"> </span></a></li>
+        {{/if}}
+    </ul>
+  </div>
+</template>

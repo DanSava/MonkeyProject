@@ -24,9 +24,13 @@ Router.route('/myCalendar', function(){
     this.render('calendar');
   }
 });
-
 Router.route('/clients', function(){
   if (Meteor.userId()) {
     this.render('clients');
+  }
+});
+Router.route('/equipment', function(){
+  if (Meteor.userId()) {
+    this.render('equipment');
   }
 });
