@@ -1,0 +1,7 @@
+<template name="client_list_ctrl">
+	<select class="form-control fa-sort-amount-desc" name="size" id='client_list_ctrl'>
+		{{# each clients}}
+			<option class="client_item" value="{{name}}" id="{{this._id}}">{{name}}</option>
+		{{/each}}
+	</select>
+</template>

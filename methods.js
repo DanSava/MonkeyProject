@@ -52,6 +52,10 @@ Meteor.methods({
 	remove_client : function(client_id) {
 		Clients.remove(client_id);
 	},
+	'update_client': function (cl){
+		Clients.update({_id:cl._id}, {$set:{name:cl.name, address: cl.address,
+		contacts: cl.contacts, city: cl.city}});
+	},
 
 	// Equipement methods
 	'insert_equipment' : function (equipment) {
@@ -59,7 +63,7 @@ Meteor.methods({
 	},
 	'update_equipment' : function (equipment) {
 		Equipment.update({_id: equipment._id}, {$set: {type: equipment.type,
-			manufacturer: equipment.manufacturer, name: equipment.name,
+			manufacturer: equipment.manufacturer, name: equipment.name, client: equipment.client,
 			serial_no: equipment.serial_no, size:equipment.size, install_date: equipment.install_date,
 			last_check_date: equipment.last_check_date}
 			});

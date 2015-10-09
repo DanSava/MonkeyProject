@@ -19,7 +19,7 @@ Template.equipment.events({
 
 Template.equipment_item.events({
   'click .edit_equipment' : function (evt, tmp) {
-    Session.set('editing_equipment_id', this._id);
+    Session.set('editing_equipment', this);
     $("#equipment_dlg").modal('show');
   },
   'click .remove_equipment' : function (evt, tmp) {

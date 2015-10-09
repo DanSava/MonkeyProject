@@ -7,11 +7,7 @@
       </div>
       <div class="col-md-5 pull-right">
           <h1> <small> Users</small></h1>
-          <ul class="nav nav-pills nav-stacked">
-           {{#each users}}
-             <li> ID :  {{_id}} </li>
-           {{/each}}
-          </ul>
+          {{>user_list_ctrl}}
       </div>
 
   </div>

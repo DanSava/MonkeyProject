@@ -1,0 +1,51 @@
+<template name="new_client_dlg">
+  <!-- Modal -->
+<div id="new_client" class="new_client modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close close_dlg" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add a new client</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <!-- Client Name -->
+            <label for="title">Name</label>
+            <input type="text" class=" form-control" id="client_name" placeholder="" value="{{editing_client.name}}" required>
+            <!-- Client City -->
+            <label for="title">City</label>
+              {{>city_list_ctrl}}
+            <label for="title">Address</label>
+            <input type="text" class="form-control" id="client_adr" placeholder="" value="{{editing_client.address}}" required>
+            <br><label for="title">Contact Person</label>
+            {{#each contact_list}}
+            <div class="row">
+              <div class="col-xs-4">
+                <label for="title">Name</label>
+                <input type="text" class="form-control" id="client_contact_name_{{idx}}" placeholder="" value="{{name}}" required>
+              </div>
+              <div class="col-xs-5">
+                <label for="title">Email</label>
+                <input type="email" class="form-control" id="client_contact_email_{{idx}}" placeholder="" value="{{email}}" required>
+              </div>
+              <div class="col-xs-3">
+                <label for="title">Telefone</label>
+                <input type="numeric" class="form-control" id="client_contact_tel_{{idx}}" placeholder="" value="{{telefone}}" required>
+              </div>
+
+            </div>
+            {{/each}}
+            <label for="title">
+              <a class="add_client_contact" href="#" >Add contact</a><span class="glyphicon glyphicon-plus pull-right" style="color: blue"> </span>
+            </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close_dlg btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="save_info_dlg btn btn-primary" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+</template>

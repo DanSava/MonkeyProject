@@ -19,7 +19,7 @@ Template.clients.events({
 
 Template.client_item.events({
   'click .edit_client' : function (evt, tmp) {
-    Session.set('editing_client_id', this._id);
+    Session.set('editing_client', this);
     $("#new_client").modal('show');
   },
 
