@@ -1,16 +1,18 @@
 <template name="calendar">
-  <div class="container ">
-    <h1>Intervention Calendar</h1>
-      <div class="col-md-5">
-        <div class="mycal" >
+  <div class="ui stackable grid">
+    <div class="left floated eleven wide column ">
+      <div class="ui segment">
+        <div class="page-header">
+          <h1> <small> Interventions </small></h1>
         </div>
+        {{>intervention}}
       </div>
-      <div class="col-md-5 pull-right">
-          <h1> <small> Users</small></h1>
-          {{>user_list_ctrl}}
+    </div>
+    <div class="right floated five wide column">
+      <div class="ui segment">
+        <div class="mycal"></div>
       </div>
-
+    </div>
   </div>
-
-    {{>new_event_dlg}}
+  {{>new_event_dlg}}
 </template>

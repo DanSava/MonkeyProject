@@ -38,4 +38,7 @@ if (Meteor.isServer) {
   Meteor.publish("equipment_type", function () {
     return EquipmentType.find();
   });
+  Meteor.publish("car", function () {
+    return Car.find();
+  });
 }

@@ -12,8 +12,4 @@ Template.city_list_ctrl.helpers({
 });
 
 Template.city_list_ctrl.events({
-  'keypress .form-control': function (evt, tmp) {
-    var txt = tmp.find('#city_list_towns').value;
-    console.log(towns[txt].judet);
-  }
 });

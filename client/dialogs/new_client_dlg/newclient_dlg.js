@@ -22,7 +22,7 @@ Template.new_client_dlg.events({
       name : tmp.find('#client_name').value,
       address: tmp.find('#client_adr').value,
       contacts: get_contacts(tmp),
-      city:tmp.find('#city_list_input').value,
+      city:tmp.find('#city_list_ctrl').value,
     };
 
     // Update the client if there is one being edited or add a new client if
@@ -60,5 +60,11 @@ Template.new_client_dlg.helpers ({
   'contact_list': function () {
     var contacts = Session.get('client_contacts');
     return contacts;
+  },
+  'dlg_title': function (){
+    if (Session.get('editing_client')) {
+      return 'Update Client';
+    }
+    return 'Add New Client';
   }
 });

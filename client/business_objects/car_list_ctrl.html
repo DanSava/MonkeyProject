@@ -1,0 +1,7 @@
+<template name="car_list_ctrl">
+	<select class="form-control fa-sort-amount-desc" name="size" id='car_list_ctrl'>
+		{{# each car}}
+			<option class="car_item" value="{{plate}}" id="{{this._id}}">{{plate}}</option>
+		{{/each}}
+	</select>
+</template>

@@ -1,0 +1,62 @@
+<template name="intervention">
+    <table class="ui sortable celled collapsing table">
+      <thead>
+        <tr>
+          <th class="sorted ascending">Title</th>
+          <th>Client</th>
+          <th>Contact</th>
+          <th>Equipment</th>
+          <th>Assigned to</th>
+          <th>Car</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Created</th>
+          <th class="edit_intervention">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each intervention_list}}
+         {{>intervention_item}}
+        {{/each}}
+      </tbody>
+    </table>
+   <div class="btn btn-primary new_intervention_act"> New Intervention <i class="add circle icon"></i></div>
+    {{>new_event_dlg}}
+</template>
+
+
+<template name="intervention_item">
+  <tr class="intervention_item" style="cursor:pointer">
+		<td>
+			{{title}}
+		</td>
+    <td>
+			{{client}}
+		</td>
+		<td>
+	     {{contact}}
+		</td>
+		<td>
+      {{equipment}}
+		</td>
+    <td>
+      {{owner}}
+		</td>
+    <td>
+      {{car}}
+		</td>
+    <td>
+      {{start}}
+		</td>
+    <td>
+      {{end}}
+		</td>
+    <td>
+      {{creation_date}}
+		</td>
+    <td>
+			<span class="edit_intervention glyphicon glyphicon-edit"></span>
+      <span class="remove_intervention glyphicon glyphicon-trash"></span>
+		</td>
+	</tr>
+</template>

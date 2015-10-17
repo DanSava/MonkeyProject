@@ -92,6 +92,20 @@ Meteor.methods({
 	},
 	'update_equipment_type': function(el) {
 		EquipmentType.updated({_id: el._id}, {$set:{name: el.name}});
+	},
+
+	// Car methods
+	'insert_car': function (el) {
+		Car.insert(el);
+	},
+	'remove_car': function (id) {
+		Car.remove(id);
+	},
+	'update_car': function (car){
+		Car.update({_id: car._id}, {$set: {plate: car.plate}});
+	},
+	'get_cars':function (){
+		return Car.find();
 	}
 
 });

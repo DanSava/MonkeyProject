@@ -7,4 +7,5 @@ if (Meteor.isClient) {
 	Meteor.subscribe("users");
 	Meteor.subscribe("manufacturer");
 	Meteor.subscribe("equipment_type");
+	Meteor.subscribe("car");
 }

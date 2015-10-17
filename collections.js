@@ -5,3 +5,4 @@ Clients = new Mongo.Collection('clients');
 Equipment = new Mongo.Collection('equipment');
 EquipmentType = new Mongo.Collection('equipment_type');
 Manufacturer = new Mongo.Collection('manufacturer');
+Car = new Mongo.Collection('car');

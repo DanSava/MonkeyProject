@@ -1,0 +1,43 @@
+<template name="car_table">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Plate Number</th>
+        <th class="edit_car">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each car}}
+       {{>car_item}}
+      {{/each}}
+      {{#if adding_new_car}}
+        {{>new_car}}
+      {{/if}}
+    </tbody>
+  </table>
+  <div class="btn btn-primary new_car_act"> New Car <i class="add circle icon"></i></div>
+</template>
+
+<template name="car_item">
+  <tr class="car_item">
+		<td>
+      {{# if editing_car}}
+        {{>new_car}}
+      {{else}}
+			   {{plate}}
+      {{/if}}
+		</td>
+    <td>
+			<span class="edit_car glyphicon glyphicon-edit"></span>
+      <span class="remove_car glyphicon glyphicon-trash"></span>
+		</td>
+	</tr>
+</template>
+
+<template name="new_car">
+  <tr class="new_car_item">
+		<td>
+			<input type="text" class="form-control new_car_input" id="new_car_input" placeholder="New car number"/>
+		</td>
+	</tr>
+</template>

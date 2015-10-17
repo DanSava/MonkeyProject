@@ -5,15 +5,9 @@ Template.calendar.onRendered(function () {
   Session.set('page', 4);
   var calendar = this.$('.mycal').fullCalendar ({
     'dayClick' : function (date, jsEvent, view) {
-      var calendarEvent = {};
-      calendarEvent.start = date;
-      calendarEvent.end = date;
-      calendarEvent.title = 'New Event';
-      calendarEvent.owner = Meteor.userId();
-      calendarEvent.backgroundColor = 'green';
-      calendarEvent.equipment = '';
+      Session.set('clicked_date', date);
       $("#newEvent").modal();
-      //Meteor.call('saveCalEvent', calendarEvent);
+      //Meteor.call('saveCalEvent', intervention);
     },
     'events' : function (start, end, callback) {
       var user = Meteor.user();
@@ -33,9 +27,10 @@ Template.calendar.onRendered(function () {
     selectable : true,
     eventRender : function(event, element) {
       element.html(event.title  +'<span class="removeEvent glyphicon glyphicon-trash pull-right" id="Delete"></span>');
+      element.css('border-width', '2px');
     },
     eventClick : function(calEvent, jsEvent, view) {
-      Session.set('editing_event', calEvent._id);
+      Session.set('editing_intervention', calEvent._id);
       if (jsEvent.target.id !== 'Delete'){
         $("#newEvent").modal();
         // change the border color just for fun
@@ -46,9 +41,9 @@ Template.calendar.onRendered(function () {
         return event.rendering === 'background';
     },
     header: {
-      left:   'today, prev, next',
+      left:   'prev, next',
       center: 'title',
-      right:  'basicWeek, month'
+      right:  'month'
     }
   }).data().fullCalendar;
   Deps.autorun (function () {
@@ -62,8 +57,8 @@ Template.calendar.onRendered(function () {
 /// Helpers
 ///
 Template.calendar.helpers({
-    'editing_event' : function () {
-      return Session.get('editing_event');
+    'editing_intervention' : function () {
+      return Session.get('editing_intervention');
     },
     'events' : function () {
       return CalEvent.find();
@@ -77,7 +72,7 @@ Template.calendar.helpers({
   ///
   Template.calendar.events ({
     'click .removeEvent' : function (evt, tmp) {
-      var id = Session.get('editing_event');
+      var id = Session.get('editing_intervention');
       if (id) {
         Meteor.call('removeEvent', id);
       }

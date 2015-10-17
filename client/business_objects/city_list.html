@@ -1,10 +1,7 @@
 <template name="city_list_ctrl">
-  <input class="form form-control city_list" type="text" name="search" id="city_list_input" placeholder="City" list="city_list" autocomplete="on" value="{{selected_city}}">
-    <datalist id="city_list">
-      <select>
-        {{#each towns}}
-        <option>{{this}}</option>
-        {{/each}}
-      </select>
-    </datalist>
+  <select class="form-control fa-sort-amount-desc" name="size" id='city_list_ctrl'>
+    {{#each towns}}
+			<option class="city_list" value="{{this}}">{{this}}</option>
+		{{/each}}
+	</select>
 </template>

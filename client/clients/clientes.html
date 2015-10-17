@@ -1,45 +1,23 @@
 <template name="clients">
-  <div class="page-header">
-  		<h2><small>Clients </small></h2>
-  </div>
-  <div class="container">
-    <div class="row">
-          <div class="col-xs-2">
-              <div class="panel panel-primary">
-                  <div class="panel-heading">
-                    Actions
-                  </div>
-                  <!-- /.panel-heading -->
-                  <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                        <li class="list new_client_act"> <a href="#"> <h4> <small>New Client</small></h4></a></li>
-                        </ul>
-                  </div>
-                  <!-- /.panel-body -->
-              </div>
-          </div>
-    <div class="col-xs-10">
-        <table class="table table-striped table-hover table-bordered table-condensted table-hover">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>City</th>
-              <th>Address</th>
-              <th>Contact Person</th>
-              <th>Email</th>
-              <th>Telefone</th>
-              <th class="edit_client">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each client_list}}
-             {{>client_item}}
-            {{/each}}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+    <table class="table table-hover table-condensted">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>City</th>
+          <th>Address</th>
+          <th>Contact Person</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th class="edit_client">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each client_list}}
+         {{>client_item}}
+        {{/each}}
+      </tbody>
+    </table>
+   <div class="btn btn-primary new_client_act"> New Client <i class="add circle icon"></i></div>
     {{>new_client_dlg}}
 </template>
 
@@ -72,7 +50,6 @@
       {{telefone}}<br>
       {{/each}}
 		</td>
-
     <td>
 			<span class="edit_client glyphicon glyphicon-edit"></span>
       <span class="remove_client glyphicon glyphicon-trash"></span>

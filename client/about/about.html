@@ -1,15 +1,39 @@
 <template name="about">
 	<div class="page-header">
-		<h1>About  <small>Page info</small> </h1>
+		<h1 class="lbl">{{title}}<small>List</small> </h1>
 	</div>
-	<div class="container" style="width : 90%">
-		<div class="row">
-			<div class="col col-md-8">
+	<div class='row'>
+
+	<div class="row">
+	</div>
+			{{>navigation_side_bar}}
+	</div>
+</template>
+<template  name ="navigation_side_bar">
+	<div class="ui grid">
+	  <div class="two wide column">
+	    <div class="ui vertical fluid tabular menu">
+	      <a class="client_item item {{is_client_active}}"> Clients </a>
+	      <a class="equipment_item item {{is_equipment_active}}"> Equipments</a>
+				<a class="car_item item {{is_car_active}} "> Cars</a>
+	    </div>
+	  </div>
+	  <div class="twelve wide stretched column">
+			{{#if is_client_active}}
+		    <div class="ui segment">
+		    {{>clients}}
+		    </div>
+			{{/if}}
+			{{#if is_equipment_active}}
+				<div class="ui segment">
 				{{>equipment}}
-			</div>
-			<div class="col col-md-8">
-				{{>clients}}
-			</div>
-	</div>
+				</div>
+			{{/if}}
+			{{#if is_car_active}}
+				<div class="ui segment">
+				{{>car_table}}
+				</div>
+			{{/if}}
+	  </div>
 	</div>
 </template>

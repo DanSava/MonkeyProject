@@ -15,16 +15,31 @@
             <div class="row">
               <div class="col-xs-6">
                 <label for="title">Client</label>
-                <select class="form-control" name="clients">
-                  {{# each clients}}
-                    <option class="client_item" value="{{this._id}}">{{name}}</option>
-                  {{/each}}
-                </select>
-
+                {{>client_list_ctrl}}
+              </div>
+              <div class="col-xs-6">
+                <label for="title">Contact</label>
+                {{>client_contact_list_ctrl}}
               </div>
             </div>
-            <label for="title">Equipment</label>
-            <input type="text" class="form-control" id="equipment" placeholder="" value="{{event.equipment}}">
+            <div class="row">
+              <div class="col-xs-6">
+                <label for="title">Equipment</label>
+                  {{>equipment_list_ctrl}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6">
+                  <label for="title">Assigned to</label>
+                    {{>user_list_ctrl}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6">
+                  <label for="title">Car</label>
+                    {{>car_list_ctrl}}
+                </div>
+              </div>
             <label for="title">Dates</label>
             <div class="datepicker input-daterange input-group" id="datepicker">
               <input type="text" class="input-sm form-control" name="start" id="start_date" placeholder="{{event.start}}"/>
