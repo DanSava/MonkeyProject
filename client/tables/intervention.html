@@ -1,15 +1,9 @@
 <template name="intervention">
-    <table class="ui sortable celled collapsing table">
+    <table class="ui very basic striped stackable selectable table">
       <thead>
         <tr>
-          <th class="sorted ascending">Title</th>
-          <th>Client</th>
-          <th>Contact</th>
-          <th>Equipment</th>
+          <th>Title</th>
           <th>Assigned to</th>
-          <th>Car</th>
-          <th>Start Date</th>
-          <th>End Date</th>
           <th>Created</th>
           <th class="edit_intervention">Actions</th>
         </tr>
@@ -26,37 +20,61 @@
 
 
 <template name="intervention_item">
-  <tr class="intervention_item" style="cursor:pointer">
+  <tr class="intervention_item">
 		<td>
-			{{title}}
-		</td>
-    <td>
-			{{client}}
-		</td>
-		<td>
-	     {{contact}}
-		</td>
-		<td>
-      {{equipment}}
+			<a href="#" class="intervention_title">{{title}}</a>
 		</td>
     <td>
       {{owner}}
 		</td>
     <td>
-      {{car}}
-		</td>
-    <td>
-      {{start}}
-		</td>
-    <td>
-      {{end}}
-		</td>
-    <td>
-      {{creation_date}}
+      {{date}}
 		</td>
     <td>
 			<span class="edit_intervention glyphicon glyphicon-edit"></span>
       <span class="remove_intervention glyphicon glyphicon-trash"></span>
 		</td>
 	</tr>
+</template>
+
+<template name="intervention_details">
+      <table class="ui definition table">
+        <tbody>
+          <tr>
+            <td class="two wide column">Title</td>
+            <td class="collapsing">{{details.title}}</td>
+          </tr>
+          <tr>
+            <td class="two wide column">Assigned to</td>
+            <td class="collapsing">{{details.owner}}</td>
+          </tr>
+          <tr>
+            <td>Client</td>
+            <td class="collapsing">{{details.client}}</td>
+          </tr>
+          <tr>
+            <td>Equipement</td>
+            <td class="collapsing">{{details.equipment}}</td>
+          </tr>
+          <tr>
+            <td>Contact</td>
+            <td class="collapsing">{{details.contact}}</td>
+          </tr>
+          <tr>
+            <td>Start Date</td>
+            <td class="collapsing">{{details.start}}</td>
+          </tr>
+          <tr>
+            <td>End Date</td>
+            <td class="collapsing">{{details.end}}</td>
+          </tr>
+          <tr>
+            <td>Created</td>
+            <td class="collapsing">{{details.creation_date}}</td>
+          </tr>
+        </tbody>
+      </table>
+    <button class="ui primary button back_btn">
+      Back
+    </button>
 </template>

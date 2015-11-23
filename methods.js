@@ -35,8 +35,8 @@ Meteor.methods({
 	'saveCalEvent': function (ce){
 		CalEvent.insert(ce);
 	},
-	'updateCalEvent':function(id, txt){
-		CalEvent.update({_id:id}, {$set:{title:txt}});
+	'updateCalEvent':function(element){
+		CalEvent.update({_id:element._id}, {$set:{title:element.title, start:element.start, client:element.client, owner:element.owner, car:element.car}});
 	},
 	'moveEvent' : function (reqEvent){
 		return CalEvent.update({_id:reqEvent._id}, {$set:{start:reqEvent.start, end:reqEvent.end}});

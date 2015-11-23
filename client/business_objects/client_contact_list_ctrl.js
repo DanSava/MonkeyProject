@@ -10,6 +10,7 @@ Template.client_contact_list_ctrl.events({
 Template.client_contact_list_ctrl.helpers({
   'client_contacts' : function () {
     var selected_client = Session.get('selected_client');
+    console.log(selected_client);
     if (selected_client) {
       var cl = Clients.find({name: selected_client}).fetch();
       console.log(cl[0].contacts);

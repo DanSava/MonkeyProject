@@ -30,11 +30,12 @@ Template.calendar.onRendered(function () {
       element.css('border-width', '2px');
     },
     eventClick : function(calEvent, jsEvent, view) {
-      Session.set('editing_intervention', calEvent._id);
+      calEvent.id = calEvent._id;
+      Session.set('editing_intervention_el', calEvent);
       if (jsEvent.target.id !== 'Delete'){
         $("#newEvent").modal();
         // change the border color just for fun
-        $(this).css('border-color', 'red');
+        $(this).css('border-width', '3px');
       }
     },
     selectOverlap : function(event) {
@@ -58,13 +59,13 @@ Template.calendar.onRendered(function () {
 ///
 Template.calendar.helpers({
     'editing_intervention' : function () {
-      return Session.get('editing_intervention');
+      return Session.get('editing_intervention_el');
     },
     'events' : function () {
       return CalEvent.find();
     },
-    'users': function () {
-      return Meteor.users.find();
+    'show_details': function() {
+      return Session.get('show_intervention_details');
     }
   });
   ///
@@ -72,9 +73,9 @@ Template.calendar.helpers({
   ///
   Template.calendar.events ({
     'click .removeEvent' : function (evt, tmp) {
-      var id = Session.get('editing_intervention');
-      if (id) {
-        Meteor.call('removeEvent', id);
+      var intervention = Session.get('editing_intervention_el');
+      if (intervention) {
+        Meteor.call('removeEvent', intervention._id);
       }
-    }
+    },
   });
