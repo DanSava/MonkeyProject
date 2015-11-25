@@ -8,4 +8,9 @@ if (Meteor.isClient) {
 	Meteor.subscribe("manufacturer");
 	Meteor.subscribe("equipment_type");
 	Meteor.subscribe("car");
+
+	Accounts.ui.config({
+		passwordSignupFields: 'USERNAME_AND_EMAIL'
+	});
+
 }

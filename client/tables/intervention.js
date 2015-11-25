@@ -25,7 +25,6 @@ Template.intervention_item.events({
     Session.set('editing_intervention', this._id);
     $("#newEvent").modal();
   },
-
   'click .remove_intervention' : function (evt, tmp) {
     Meteor.call('removeEvent', this._id);
   },
@@ -36,12 +35,24 @@ Template.intervention_item.events({
 Template.intervention_item.helpers({
   'date': function() {
     return moment(this.creation_date).fromNow();
+  },
+  'owner':function () {
+    return Meteor.users.findOne({_id:this.owner}).username;
   }
+
 });
 
 Template.intervention_details.helpers({
+  'date': function() {
+    var d = Session.get('show_intervention_details');
+    return moment(d.creation_date).fromNow();
+  },
   'details': function (){
     return Session.get('show_intervention_details');
+  },
+  'owner' : function () {
+    var d = Session.get('show_intervention_details');
+    return Meteor.users.findOne({_id:d.owner}).username;
   }
 });
 

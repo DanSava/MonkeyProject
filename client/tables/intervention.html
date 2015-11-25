@@ -42,35 +42,39 @@
         <tbody>
           <tr>
             <td class="two wide column">Title</td>
-            <td class="collapsing">{{details.title}}</td>
+            <td class="">{{details.title}}</td>
           </tr>
           <tr>
             <td class="two wide column">Assigned to</td>
-            <td class="collapsing">{{details.owner}}</td>
+            <td class="">{{owner}}</td>
           </tr>
           <tr>
             <td>Client</td>
-            <td class="collapsing">{{details.client}}</td>
+            <td class="">{{details.client}}</td>
           </tr>
           <tr>
             <td>Equipement</td>
-            <td class="collapsing">{{details.equipment}}</td>
+            <td class="">{{details.equipment}}</td>
           </tr>
           <tr>
             <td>Contact</td>
-            <td class="collapsing">{{details.contact}}</td>
+            <td class="">{{details.contact.name}}</td>
+          </tr>
+          <tr>
+            <td>Phone Nr</td>
+            <td class="">{{details.contact.telefone}}</td>
           </tr>
           <tr>
             <td>Start Date</td>
-            <td class="collapsing">{{details.start}}</td>
+            <td class="">{{details.start}}</td>
           </tr>
           <tr>
             <td>End Date</td>
-            <td class="collapsing">{{details.end}}</td>
+            <td class="">{{details.end}}</td>
           </tr>
           <tr>
             <td>Created</td>
-            <td class="collapsing">{{details.creation_date}}</td>
+            <td class="">{{date}}</td>
           </tr>
         </tbody>
       </table>

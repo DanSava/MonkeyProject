@@ -1,7 +1,7 @@
 <template name="client_contact_list_ctrl">
 	<select class="form-control fa-sort-amount-desc" name="size" id='client_list_contact_ctrl'>
 		{{# each client_contacts}}
-			<option class="client_contact_item" value="{{name}}" id="{{this._id}}">{{name}}</option>
+			<option class="client_contact_item" value="{{name}}" email="{{email}}" idx="{{idx}}" telefone="{{telefone}}">{{name}}</option>
 		{{/each}}
 	</select>
 </template>

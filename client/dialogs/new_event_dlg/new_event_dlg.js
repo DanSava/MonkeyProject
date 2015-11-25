@@ -36,7 +36,6 @@ Template.new_event_dlg.events ({
         tmp.find('#title').value = selected_intervention.title;
       }
   },
-
   'click .updateCalEvent': function test(evt, tmp) {
     var intervention = {
       start: tmp.find('#start_date').value,
@@ -46,21 +45,23 @@ Template.new_event_dlg.events ({
       owner: Session.get('selected_user')|| Meteor.userId(),
       equipment: tmp.find('#equipment_list_ctrl').value,
       car: tmp.find('#car_list_ctrl').value,
-      contact: tmp.find('#client_list_contact_ctrl').value,
-      seen: false,
-      accepted: false,
-      creation_date: new Date(),
+      contact: Session.get('selected_client_contact'),
     };
     edinting_element = Session.get('editing_intervention_el');
     if (edinting_element) {
       intervention._id = edinting_element._id;
       Meteor.call('updateCalEvent', intervention);
+      if (Session.get('show_intervention_details')){
+        Session.set('show_intervention_details', intervention);
+      }
     }
     else {
-      Meteor.call('saveCalEvent', intervention);
+      intervention.seen = false;
+      intervention.accepted = false;
+      intervention.creation_date = new Date();
     }
+      Meteor.call('saveCalEvent', intervention);
   },
-
 });
 
 Template.new_event_dlg.helpers ({
