@@ -9,11 +9,6 @@ Router.route('/about', function(){
     this.render('about');
   }
 });
-Router.route('/builder', function(){
-  if (Meteor.userId()) {
-    this.render('builder');
-  }
-});
 Router.route('/todo', function(){
   if (Meteor.userId()) {
     this.render('todo');
@@ -22,15 +17,5 @@ Router.route('/todo', function(){
 Router.route('/myCalendar', function(){
   if (Meteor.userId()) {
     this.render('calendar');
-  }
-});
-Router.route('/clients', function(){
-  if (Meteor.userId()) {
-    this.render('clients');
-  }
-});
-Router.route('/equipment', function(){
-  if (Meteor.userId()) {
-    this.render('equipment');
   }
 });

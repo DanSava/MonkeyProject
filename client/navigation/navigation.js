@@ -11,32 +11,14 @@ Template.navigation.helpers({
     }
     return '';
   },
-	isBuilderActive: function () {
+	isTodoActive : function () {
     if (Session.equals("page", 2)){
     	return 'active';
     }
     return '';
   },
-	isTodoActive : function () {
-    if (Session.equals("page", 3)){
-    	return 'active';
-    }
-    return '';
-  },
 	isMyCalendarActive : function () {
-		if (Session.equals("page", 4)){
-			return 'active';
-		}
-		return '';
-	},
-	is_clients_active : function () {
-		if (Session.equals("page", 5)){
-			return 'active';
-		}
-		return '';
-	},
-	is_equipment_active : function () {
-		if (Session.equals("page", 6)){
+		if (Session.equals("page", 3)){
 			return 'active';
 		}
 		return '';

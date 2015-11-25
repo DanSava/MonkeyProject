@@ -1,5 +1,5 @@
 Template.clients.onRendered(function(){
-Session.set('page', 5);
+Session.set('page', 1);
 });
 
 Template.clients.helpers({

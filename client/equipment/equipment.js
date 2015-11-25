@@ -1,5 +1,5 @@
 Template.equipment.onRendered(function(){
-Session.set('page', 6);
+Session.set('page', 1);
 });
 
 Template.equipment.helpers({

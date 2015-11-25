@@ -14,10 +14,7 @@
 	        <li class="{{isHomeActive}}" ><a href="/">Home</a></li>
 					{{#if isInRole 'super'}}
 							<li class="{{isAboutActive}}" ><a href="/about">About</a></li>
-							<li class="{{isBuilderActive}}" ><a href="/builder">Builder</a></li>
 							<li class="{{isTodoActive}}" ><a href="/todo">Todo</a></li>
-							<li class="{{is_clients_active}}" ><a href="/clients">Clients</a></li>
-							<li class="{{is_equipment_active}}" ><a href="/equipment">Equipments</a></li>
 				  {{/if}}
 					{{#if isUserConnected}}
 						<li class="{{isMyCalendarActive}}" ><a href="/myCalendar">Calendar</a></li>
