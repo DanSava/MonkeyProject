@@ -28,8 +28,8 @@ Template.listitem.events({
 		if(evt.which === 13){
 			var txt = tmp.find('.newListTxt').value;
 			if (txt) {
-				Meteor.call('updateList', this._id, txt)
-			};
+				Meteor.call('addList', this._id, txt);
+			}
 			Session.set('editingList', null);
 		}
 	}
@@ -38,4 +38,4 @@ Template.listitem.helpers({
 	'editinglist' : function () {
 			return Session.get('editingList') === this._id;
 	}
-})
+});

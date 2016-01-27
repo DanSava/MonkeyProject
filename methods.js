@@ -106,6 +106,15 @@ Meteor.methods({
 	},
 	'get_cars':function (){
 		return Car.find();
-	}
+	},
 
+	'get_user_name': function(id) {
+		var item = Meteor.users.find({_id:id});
+		if (!item){
+			return null;
+		}
+		else {
+			return item.username || null;
+		}
+		}
 });

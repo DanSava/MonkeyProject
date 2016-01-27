@@ -28,6 +28,18 @@ Template.navigation.helpers({
 	},
 	'isUserConnected': function () {
 		return Meteor.userId();
+	},
+	user_name : function () {
+		var user = Meteor.user();
+		try {
+			if (user) {
+				return user.username;
+			}
+		}
+		catch(err) {
+		    console.log(err);
+		}
+		return "";
 	}
 });
 Template.navigation.events({

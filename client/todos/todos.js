@@ -1,3 +1,6 @@
+Template.todos.onRendered(function(){
+});
+
 Template.todos.helpers({
 	'list': function () {
 		return Lists.findOne(Session.get('listid'));
@@ -40,12 +43,12 @@ Template.todolistitem.events({
 		if(evt.which === 13){
 			var txt = tmp.find('.newtodotxt').value;
 			if (txt) {
-				Meteor.call('updateTodo', this._id, txt)
-			};
+				Meteor.call('updateTodo', this._id, txt);
+			}
 			Session.set('editingtodo', null);
 		}
 	},
 	'click .check':function(evt,tmp){
-		Meteor.call('updateTodoDone', this._id, !this.done)
+		Meteor.call('updateTodoDone', this._id, !this.done);
 	}
 });

@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
 	Meteor.subscribe("lists");
-  Meteor.subscribe("todos");
+    Meteor.subscribe("todos");
 	Meteor.subscribe("calevent");
 	Meteor.subscribe("clients");
 	Meteor.subscribe("equipment");
@@ -8,7 +8,6 @@ if (Meteor.isClient) {
 	Meteor.subscribe("manufacturer");
 	Meteor.subscribe("equipment_type");
 	Meteor.subscribe("car");
-
 	Accounts.ui.config({
 		passwordSignupFields: 'USERNAME_AND_EMAIL'
 	});

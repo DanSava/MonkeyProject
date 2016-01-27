@@ -1,15 +1,11 @@
-Template.intervention.onRendered(function(){
-Session.set('page', 5);
-});
-
 Template.intervention.helpers({
   'intervention_list' : function () {
     var user = Meteor.user();
     if(!Roles.userIsInRole(user, ['super'])) {
-      return CalEvent.find({owner:Meteor.userId()}).fetch();
+      return CalEvent.find({owner:Meteor.userId()}, {sort: {creation_date: -1}}).fetch();
     }
     else {
-      return CalEvent.find().fetch();
+      return CalEvent.find({}, {sort: {creation_date: -1}}).fetch();
     }
   }
 });
@@ -37,9 +33,12 @@ Template.intervention_item.helpers({
     return moment(this.creation_date).fromNow();
   },
   'owner':function () {
-    return Meteor.users.findOne({_id:this.owner}).username;
+    var user = Meteor.users.findOne({_id:this.owner});
+    if (user) {
+        return user.username;
+    }
+    return "";
   }
-
 });
 
 Template.intervention_details.helpers({

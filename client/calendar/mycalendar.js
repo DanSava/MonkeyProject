@@ -2,7 +2,6 @@
 /// Calendar Specific code
 ///
 Template.calendar.onRendered(function () {
-  Session.set('page', 4);
   var calendar = this.$('.mycal').fullCalendar ({
     'dayClick' : function (date, jsEvent, view) {
       Session.set('clicked_date', date);

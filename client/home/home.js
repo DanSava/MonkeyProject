@@ -1,9 +1,8 @@
 Template.home.onRendered(function(){
-Session.set('page', 0);
 });
 Template.home.helpers({
     'currentUser' : function(){
-      return Meteor.userId()
+      return Meteor.userId();
     }
 });
 
